@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css} "/>
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.15.4/css/all.css} "/>
+<script th:src="@{/webjars/jquery/3.6.3/jquery.min.js}"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="employee_save" method="post" class="form-control form-control-sm">
+    <div>
+        <label>Full name</label>
+        <input type="text" name="fullName" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" name="email" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Address</label>
+        <input type="text" name="address" class="form-control form-control-sm">
+    </div>
+    <div>
+        <label>Role</label>
+        <select name="role" class="form-control form-control-sm">
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+        </select>
+    </div>
+    <div>
+        <label>Department</label>
+        <select name="department.id" class="form-control form-control-sm" th:each="d : ${departments}" th:value="${d.id}" th:text="${d.name}">
+        </select>
+    </div>
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+</form>
+
+</body>
+</html>
